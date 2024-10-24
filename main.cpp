@@ -2,6 +2,7 @@
 #include <vector>
 #include <list>
 #include <set>
+#include <algorithm>
 #include <chrono>
 #include <fstream>
 using namespace std;
@@ -10,7 +11,7 @@ int main() {
     vector<string> vector1;
     list<string> list1;
     set<string> set1;
-
+    //Reading
     ifstream fin("codes.txt");
     int i = 0;
     string code;
@@ -26,6 +27,13 @@ int main() {
         set1.insert(code);
     }
     fin.close();
+    //Sorting
+    sort(vector1.begin(), vector1.end());
+    list1.sort();
+    //Inserting
+    string test = "TESTCODE";
+    
+    
     
     
 
