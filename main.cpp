@@ -3,10 +3,32 @@
 #include <list>
 #include <set>
 #include <chrono>
+#include <fstream>
 using namespace std;
 
 int main() {
+    vector<string> vector1;
+    list<string> list1;
+    set<string> set1;
+
+    ifstream fin("codes.txt");
+    int i = 0;
+    string code;
+    while (fin >> vector1[i++]);
+    while (fin)
+    {
+        fin >> code;
+        list1.push_back(code);
+    }
+    while (fin)
+    {
+        fin >> code;
+        set1.insert(code);
+    }
+    fin.close();
     
+    
+
 
     return 0;
 }
