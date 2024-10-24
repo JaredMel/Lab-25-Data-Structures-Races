@@ -6,30 +6,63 @@
 #include <chrono>
 #include <fstream>
 using namespace std;
+using namespace std::chrono;
+
 
 int main() {
     vector<string> vector1;
     list<string> list1;
     set<string> set1;
+
+    cout << "Operation  Vector  List    Set" << endl;
     //Reading
+    cout << "Read   ";
     ifstream fin("codes.txt");
     int i = 0;
     string code;
+
+    auto start = high_resolution_clock::now();
     while (fin >> vector1[i++]);
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(end - start);
+    cout << duration.count() << "   ";
+
+    auto start = high_resolution_clock::now();
     while (fin)
     {
         fin >> code;
         list1.push_back(code);
     }
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(end - start);
+    cout << duration.count() << "   ";
+
+    auto start = high_resolution_clock::now();
     while (fin)
     {
         fin >> code;
         set1.insert(code);
     }
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(end - start);
+    cout << duration.count() << endl;
+
     fin.close();
     //Sorting
+    cout << "Sort   ";
+
+    auto start = high_resolution_clock::now();
     sort(vector1.begin(), vector1.end());
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(end - start);
+    cout << duration.count() << endl;
+
+    auto start = high_resolution_clock::now();
     list1.sort();
+    auto end = high_resolution_clock::now();
+    auto duration = duration_cast<milliseconds>(end - start);
+    cout << duration.count() << endl;
+    
     //Inserting
     string test = "TESTCODE";
     int mid = 10000;
