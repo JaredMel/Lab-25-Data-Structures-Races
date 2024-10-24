@@ -32,7 +32,22 @@ int main() {
     list1.sort();
     //Inserting
     string test = "TESTCODE";
-    
+    int mid = 10000;
+    vector1.insert(vector1.begin() + mid, test);
+    list<string> :: iterator it1 = list1.begin();
+    advance(it1, mid);
+    list1.insert(it1, test);
+    set<string> :: iterator it2 = set1.begin();
+    advance(it2, mid);
+    set1.insert(it2, test);
+    //Deleting
+    vector1.erase(vector1.begin()+19999);
+    list<string> :: iterator it1 = list1.begin();
+    advance(it1, mid);
+    list1.erase(it1);
+    set<string> :: iterator it2 = set1.begin();
+    advance(it2, mid);
+    set1.erase(it2);
     
     
     
