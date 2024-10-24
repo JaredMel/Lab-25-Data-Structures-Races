@@ -18,36 +18,34 @@ int main() {
     //Reading
     cout << "Read   ";
     ifstream fin("codes.txt");
-    int i = 0;
     string code;
-
+    
     auto start = high_resolution_clock::now();
-    while (fin)
+    /*while (fin)
     {
         fin >> code;
-        vector1[i] = code;
-        i++;
-    }
+        vector1.push_back(code);
+    }*/
     auto end = high_resolution_clock::now();
     auto duration = duration_cast<milliseconds>(end - start);
     cout << duration.count() << "   ";
 
     start = high_resolution_clock::now();
-    while (fin)
+    /*while (fin)
     {
         fin >> code;
         list1.push_back(code);
-    }
+    }*/
     end = high_resolution_clock::now();
     duration = duration_cast<milliseconds>(end - start);
     cout << duration.count() << "   ";
 
     start = high_resolution_clock::now();
-    while (fin)
+    /*while (fin)
     {
         fin >> code;
         set1.insert(code);
-    }
+    }*/
     end = high_resolution_clock::now();
     duration = duration_cast<milliseconds>(end - start);
     cout << duration.count() << endl;
